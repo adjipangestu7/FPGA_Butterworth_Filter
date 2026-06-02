@@ -1,0 +1,94 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Mon May 25 11:02:16 2026
+| Host         : LAPTOP-E258V4EU running 64-bit major release  (build 9200)
+| Command      : report_timing -file D:/Skripsi/build-non-project-mode/report/timing_place.rpt
+| Design       : filter_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Fully Placed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.508ns  (required time - arrival time)
+  Source:                 filter/a1_2_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@6.536ns period=13.072ns})
+  Destination:            filter/a1_2_reg[13]_inv_psdsp_2/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@6.536ns period=13.072ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            13.072ns  (clk_out1_clk_wiz_0 rise@13.072ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        12.351ns  (logic 9.130ns (73.921%)  route 3.221ns (26.079%))
+  Logic Levels:           6  (CARRY4=2 DSP48E1=3 LUT1=1)
+  Clock Path Skew:        -0.017ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.604ns = ( 11.468 - 13.072 ) 
+    Source Clock Delay      (SCD):    -1.020ns
+    Clock Pessimism Removal (CPR):    0.567ns
+  Clock Uncertainty:      0.093ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.172ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  sys_clk (IN)
+                         net (fo=0)                   0.000     0.000    clkdiv/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  clkdiv/inst/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.233     2.691    clkdiv/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.021    -4.330 r  clkdiv/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.661    -2.669    clkdiv/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.573 r  clkdiv/inst/clkout1_buf/O
+                         net (fo=394, estimated)      1.553    -1.020    filter/clk_out1
+    SLICE_X50Y24         FDRE                                         r  filter/a1_2_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X50Y24         FDRE (Prop_fdre_C_Q)         0.478    -0.542 f  filter/a1_2_reg[9]/Q
+                         net (fo=2, estimated)        0.440    -0.102    filter/stage1/mul_a1_2
+    SLICE_X53Y25         LUT1 (Prop_lut1_I0_O)        0.295     0.193 r  filter/stage1/mul_a10_i_2/O
+                         net (fo=1, routed)           0.000     0.193    filter/stage1/mul_a10_i_2_n_0
+    SLICE_X53Y25         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398     0.591 r  filter/stage1/mul_a10/CO[3]
+                         net (fo=1, estimated)        0.000     0.591    filter/stage1/mul_a10_n_0
+    SLICE_X53Y26         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     0.925 r  filter/stage1/mul_a10__0/O[1]
+                         net (fo=1, estimated)        0.547     1.472    filter/stage1/mul_a10__1[5]
+    DSP48_X1Y10          DSP48E1 (Prop_dsp48e1_B[5]_PCOUT[47])
+                                                      4.030     5.502 r  filter/stage1/mul_a1/PCOUT[47]
+                         net (fo=1, estimated)        0.000     5.502    filter/stage1/mul_a1_n_106
+    DSP48_X1Y11          DSP48E1 (Prop_dsp48e1_PCIN[47]_P[15])
+                                                      1.518     7.020 r  filter/stage1/mul_a1__0/P[15]
+                         net (fo=16, estimated)       1.232     8.252    filter/stage1/mul_a1__1[32]
+    DSP48_X1Y7           DSP48E1 (Prop_dsp48e1_A[27]_P[30])
+                                                      2.077    10.329 r  filter/stage1/acc_sum__1/P[30]
+                         net (fo=5, estimated)        1.002    11.331    filter/p_0_in[16]_alias
+    SLICE_X53Y21         FDRE                                         r  filter/a1_2_reg[13]_inv_psdsp_2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     13.072    13.072 r  
+    W5                                                0.000    13.072 r  sys_clk (IN)
+                         net (fo=0)                   0.000    13.072    clkdiv/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    14.460 r  clkdiv/inst/clkin1_ibufg/O
+                         net (fo=1, estimated)        1.171    15.631    clkdiv/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.275     8.356 r  clkdiv/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, estimated)        1.578     9.934    clkdiv/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    10.025 r  clkdiv/inst/clkout1_buf/O
+                         net (fo=394, estimated)      1.443    11.468    filter/clk_out1
+    SLICE_X53Y21         FDRE                                         r  filter/a1_2_reg[13]_inv_psdsp_2/C
+                         clock pessimism              0.567    12.035    
+                         clock uncertainty           -0.093    11.942    
+    SLICE_X53Y21         FDRE (Setup_fdre_C_D)       -0.103    11.839    filter/a1_2_reg[13]_inv_psdsp_2
+  -------------------------------------------------------------------
+                         required time                         11.839    
+                         arrival time                         -11.331    
+  -------------------------------------------------------------------
+                         slack                                  0.508    
+
+
+
+

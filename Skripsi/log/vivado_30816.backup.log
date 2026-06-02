@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Mon May 25 10:54:12 2026
+# Process ID         : 30816
+# Current directory  : D:/Skripsi
+# Command line       : vivado.exe -mode batch -source tcl/non-project-mode/program_board.tcl -log log/vivado.log -journal log/vivado.jou
+# Log file           : D:/Skripsi/log/vivado.log
+# Journal file       : D:/Skripsi\log/vivado.jou
+# Running On         : LAPTOP-E258V4EU
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz
+# CPU Frequency      : 2304 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 34128 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36275 MB
+# Available Virtual  : 4771 MB
+#-----------------------------------------------------------
+source tcl/non-project-mode/program_board.tcl
+# source tcl/set_variables.tcl
+## set board_name "basys3"
+## set fpga_part "xc7a35tcpg236-1"
+## set clk_module_name "clk_wiz_0"
+## set clk_in_freq 100.000
+## set clk_out1_freq 76.500
+## set project_name "skripsi_final"
+## set top_level "filter_top"
+## set top_level_tb "${top_level}_tb.v"
+## set dir_ip "ip"
+## set dir_rtl "rtl"
+## set dir_tb "tb"
+## set dir_xdc "xdc"
+## set dir_project "project"
+## set dir_build_project_mode "build-project-mode"
+## set dir_build_non_project_mode "build-non-project-mode"
+## set dir_log "log"
+## set dir_report "report"
+## set dir_bitstream "bitstream"
+## set dir_origin [file normalize "."]
+## puts "INFO: dir_origin is  $dir_origin"
+INFO: dir_origin is  D:/Skripsi
+## set filename_xdc "filter_constraints.xdc"
+## set filename_bitstream "${board_name}_${project_name}.bit"
+# set path_file_bitstream $dir_origin/$dir_build_non_project_mode/$dir_bitstream/$filename_bitstream
+# open_hw_manager
+open_hw_manager: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 605.031 ; gain = 212.422
+# connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.1.0
+  ****** Build date   : May 14 2025-02:15:27
+    **** Build number : 2025.1.1747163727
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+# current_hw_target
+# open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183BB3E98A
+# set_property PROGRAM.FILE $path_file_bitstream [current_hw_device]
+# program_hw_devices [current_hw_device]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+INFO: [Common 17-206] Exiting Vivado at Mon May 25 10:54:37 2026...
