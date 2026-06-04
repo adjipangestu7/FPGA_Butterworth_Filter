@@ -12,6 +12,7 @@ add_files -fileset constrs_1 "$dir_origin/$dir_xdc/$filename_xdc"
 add_files [glob "$dir_origin/ip/*.xci"]
 
 # Generate IP output products
+upgrade_ip [get_ips]
 generate_target all [get_ips]
 
 # Now import/copy the files into the project
