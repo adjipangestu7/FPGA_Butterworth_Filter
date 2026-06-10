@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
 module baud_rate_generator
-    #(              // 480769 baud
+    #(
         parameter   N = 4,     // number of counter bits
-                    M = 13      // counter limit value
+                    M = 10      // counter limit value
     )
     (
         input clk_100MHz,       // basys 3 clock
