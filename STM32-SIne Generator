@@ -132,22 +132,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  // terima 1 byte dari FPGA
-//	      if (HAL_UART_Receive(&huart1, &rx_byte, 1, 10) == HAL_OK)
-//	      {
-//	          // kalau kamu pakai offset di FPGA (0–255)
-//	          int value = rx_byte;
-//
-//	          // kalau TIDAK pakai offset:
-//	          // int value = (int8_t)rx_byte;
-//
-//	          // ubah ke ASCII
-//	          int len = sprintf(tx_buf, "%d\r\n", value);
-//
-//	          // kirim ke PC
-//	          HAL_UART_Transmit(&huart2, (uint8_t*)tx_buf, len, 10);
-//	      }
-
 	  if(send_flag)
 	      {
 	          uint8_t tx[2];
@@ -363,15 +347,12 @@ volatile uint16_t idx = 0;
     	  phase += phase_step;
 
     	  uint16_t idx = (phase >> 8) & (LUT_SIZE - 1);
-//    	  sample = sin_lut[idx];
-
-          sample = sin_lut[idx];
-          send_flag = 1;
+        sample = sin_lut[idx];
+        send_flag = 1;
 //          int16_t sample = 1234;
 
 //          uint8_t tx[2];
 //
-          // ⚠️ LSB dulu (sesuai FPGA kamu)
 //          tx[0] = 0xAA;
 //          tx[0] = sample & 0xFF;
 //          tx[1] = (sample >> 8) & 0xFF;
