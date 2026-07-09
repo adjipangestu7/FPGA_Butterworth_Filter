@@ -8,7 +8,7 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 
 - Fourth-order Butterworth IIR digital filter implementation
 - Biquad cascade structure (Second-Order Sections)
-- Parameterized filter coefficients
+- Automatic RTL coefficient module generation
 - Fixed-point arithmetic implementation for FPGA
 - Real-time UART data streaming
 - STM32-based sine wave generator for hardware testing
@@ -85,6 +85,7 @@ The following parameters can be modified:
 - Cutoff frequency (or passband/stopband frequencies)
 - Sampling frequency
 - Fixed-point format
+After modifying the filter specifications, run make coeff to regenerate both the filter coefficients and the corresponding RTL coefficient module.
 
 # Setup
 
@@ -126,13 +127,13 @@ Run this command during the initial setup or whenever the Clock Wizard configura
 
 ## Generate Filter Coefficients
 
-Generate Butterworth filter coefficients.
+Generate Butterworth filter coefficients by executing generate_filter_coeff.py, which automatically produces the RTL coefficient module used in the FPGA implementation.
 
 ```bash
 make coeff
 ```
 
-Run this command during the initial setup or whenever the filter specifications are changed.
+Run this command during the initial setup or whenever the filter specifications are changed. Make coeff executes generate_filter_coeff.py, which generates Butterworth filter coefficients based on the selected specifications, converts them to fixed-point format, and automatically creates the RTL coefficient module used during FPGA synthesis.
 
 ---
 
