@@ -85,7 +85,6 @@ The following parameters can be modified:
 - Cutoff frequency (or passband/stopband frequencies)
 - Sampling frequency
 - Fixed-point format
-- Coefficient precision
 
 # Setup
 
