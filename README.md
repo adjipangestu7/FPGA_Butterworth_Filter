@@ -48,6 +48,43 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 
 ---
 
+## Modify Configuration
+
+The project provides configurable parameters for the FPGA clock and Butterworth filter specifications. Before rebuilding the project, modify the corresponding configuration file as needed.
+
+## FPGA Clock
+
+The FPGA clock configuration is located in:
+
+```text
+set_variables.tcl
+```
+
+The following parameters can be modified:
+
+- Input clock frequency
+- Output clock frequency
+- Clock divider and multiplier settings (Clock Wizard)
+
+---
+
+## Butterworth Filter
+
+The filter specifications are defined in:
+
+```text
+filter_config.py
+```
+
+The following parameters can be modified:
+
+- Filter type (Low-pass, High-pass, Band-pass, or Band-stop)
+- Filter order
+- Cutoff frequency (or passband/stopband frequencies)
+- Sampling frequency
+- Fixed-point format
+- Coefficient precision
+
 # Setup
 
 Before running the project, edit
