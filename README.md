@@ -76,13 +76,13 @@ setenv.bat
 
 ## Generate Clock Wizard
 
-Regenerate the Clock Wizard IP.
+Generate the Clock Wizard IP.
 
 ```bash
 make clock
 ```
 
-Use this command if the FPGA clock configuration has changed.
+Run this command during the initial setup or whenever the Clock Wizard configuration is updated.
 
 ---
 
@@ -94,7 +94,7 @@ Generate Butterworth filter coefficients.
 make coeff
 ```
 
-Run this command whenever the filter specifications are changed.
+Run this command during the initial setup or whenever the filter specifications are changed.
 
 ---
 
