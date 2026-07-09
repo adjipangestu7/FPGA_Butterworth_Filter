@@ -21,7 +21,7 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 ## System Architecture
 
 <p align="center">
-  <img src="docs/images/system_architecture.png" width="900">
+  <img src="images/system_architecture.png" width="900">
 </p>
 
 1. STM32 generates digital sine wave samples.
