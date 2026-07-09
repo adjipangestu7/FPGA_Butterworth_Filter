@@ -246,12 +246,6 @@ Serial Oscilloscope
 
 ---
 
-# Citation
-
-If you use this project in academic work, please cite the corresponding undergraduate thesis.
-
----
-
 # Author
 
 **Adji Pangestu**
