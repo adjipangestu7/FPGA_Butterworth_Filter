@@ -1,18 +1,21 @@
 # FPGA Butterworth IIR Filter
 
-Implementation of a **4th-order Butterworth IIR Low-Pass Filter** on an FPGA using **Verilog HDL**. This project was developed as an undergraduate thesis and demonstrates real-time digital signal filtering using an FPGA. An STM32 microcontroller is used as the input sine wave generator, while the filtered output is transmitted back to a PC for visualization using a Serial Oscilloscope.
+Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad Cascade Structure** on an FPGA using **Verilog HDL**. This project was developed as an undergraduate thesis and demonstrates real-time digital signal filtering using an FPGA. An STM32 microcontroller is used as the input sine wave generator, while the filtered output is transmitted back to a PC for visualization using a Serial Oscilloscope.
 
 ---
 
 ## Features
 
-- 4th-order Butterworth IIR Low-Pass Filter
+- Fourth-order Butterworth IIR digital filter implementation
+- Biquad cascade structure (Second-Order Sections)
 - Parameterized filter coefficients
-- UART communication between STM32 and FPGA
-- Fixed-point arithmetic implementation
-- TCL-based Vivado automation
-- One-command project build using Makefile
-
+- Fixed-point arithmetic implementation for FPGA
+- Real-time UART data streaming
+- STM32-based sine wave generator for hardware testing
+- TCL-based Vivado project automation
+- Makefile shortcuts for coefficient generation, clock generation, build, and FPGA programming
+- Modular Verilog HDL design
+  
 ---
 
 ## System Architecture
@@ -31,43 +34,6 @@ Implementation of a **4th-order Butterworth IIR Low-Pass Filter** on an FPGA usi
 3. The FPGA processes the data using a Butterworth IIR filter.
 4. Filtered samples are sent back to the PC through UART.
 5. The waveform can be observed using a Serial Oscilloscope.
-
----
-
-## Repository Structure
-
-```text
-.
-├── coeff/              # Filter coefficient generator
-├── rtl/                # Verilog HDL source files
-├── constraint/         # FPGA constraints (.xdc)
-├── scripts/            # TCL automation scripts
-├── ip/                 # Vivado IP files
-├── stm32/              # STM32 sine generator project
-├── sim/                # Simulation files
-├── build/              # Generated project files
-├── Makefile
-└── README.md
-```
-
----
-
-# Requirements
-
-Software
-
-- Xilinx Vivado
-- GNU Make
-- Git
-- STM32CubeIDE
-- Python (optional, if using Python Serial Oscilloscope)
-
-Hardware
-
-- Basys3 FPGA Board
-- STM32 Development Board
-- USB Type-C / Micro USB cable
-- USB-UART connection
 
 ---
 
@@ -97,6 +63,30 @@ setenv.bat
 
 # Build Commands
 
+## Generate Clock Wizard
+
+Regenerate the Clock Wizard IP.
+
+```bash
+make clock
+```
+
+Use this command if the FPGA clock configuration has changed.
+
+---
+
+## Generate Filter Coefficients
+
+Generate Butterworth filter coefficients.
+
+```bash
+make coeff
+```
+
+Run this command whenever the filter specifications are changed.
+
+---
+
 ## Build Project
 
 Create the Vivado project, run synthesis, implementation, and generate the bitstream.
@@ -114,30 +104,6 @@ Program the generated bitstream to the FPGA.
 ```bash
 make flash
 ```
-
----
-
-## Generate Filter Coefficients
-
-Generate Butterworth filter coefficients.
-
-```bash
-make coeff
-```
-
-Run this command whenever the filter specifications are changed.
-
----
-
-## Generate Clock Wizard
-
-Regenerate the Clock Wizard IP.
-
-```bash
-make clock
-```
-
-Use this command if the FPGA clock configuration has changed.
 
 ---
 
