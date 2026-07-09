@@ -20,14 +20,9 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 
 ## System Architecture
 
-```text
-                 UART                     UART
-+-----------+ -------------> +---------+ -------------> +----------------------+
-|  STM32    |                |  FPGA   |                | Serial Oscilloscope  |
-| Sine Wave |                | Butter- |                |      / PC            |
-| Generator |                | worth   |                |                      |
-+-----------+ <------------- +---------+ <------------- +----------------------+
-```
+<p align="center">
+  <img src="docs/images/system_architecture.png" width="900">
+</p>
 
 1. STM32 generates digital sine wave samples.
 2. Samples are transmitted to the FPGA through UART.
@@ -50,7 +45,7 @@ and modify the Vivado installation path according to your local installation.
 Example:
 
 ```bat
-set XILINX_VIVADO=C:\Xilinx\Vivado\2023.2
+D:\Xilinx\2025.1\Vivado\settings64.bat 
 ```
 
 After that, initialize the environment
