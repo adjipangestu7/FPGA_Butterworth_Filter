@@ -32,6 +32,22 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 
 ---
 
+## Default Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| FPGA Board | Basys3 (Artix-7 XC7A35T) |
+| FPGA Clock | 76.5 MHz |
+| STM32 Clock | 76.5 MHz |
+| UART Baudrate | 478125 bps |
+| UART Oversampling | 16× |
+| Sampling Frequency | 10 kHz |
+| Default Signal Frequency | 1000 Hz |
+| Data Width | 16-bit Signed |
+| Fixed-Point Format | Q1.14 |
+
+---
+
 # Setup
 
 Before running the project, edit
