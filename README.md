@@ -48,23 +48,25 @@ Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad 
 
 ---
 
-## Modify Configuration
+# Modify Configuration
 
 The project provides configurable parameters for the FPGA clock and Butterworth filter specifications. Before rebuilding the project, modify the corresponding configuration file as needed.
 
-## FPGA Clock
+## Project Variables
 
-The FPGA clock configuration is located in:
+Project settings are defined in:
 
 ```text
-set_variables.tcl
+Skripsi_TCL/tcl/set_variables.tcl
 ```
 
-The following parameters can be modified:
+This file contains configurable project parameters, including:
 
-- Input clock frequency
-- Output clock frequency
-- Clock divider and multiplier settings (Clock Wizard)
+- FPGA clock configuration
+- Target FPGA device
+- Project name
+- Top module
+- Other Vivado project settings
 
 ---
 
@@ -73,7 +75,7 @@ The following parameters can be modified:
 The filter specifications are defined in:
 
 ```text
-filter_config.py
+Skripsi_TCL/python/filter_config.py
 ```
 
 The following parameters can be modified:
@@ -90,7 +92,7 @@ The following parameters can be modified:
 Before running the project, edit
 
 ```text
-setenv.bat
+Skripsi_TCL/setenv.bat
 ```
 
 and modify the Vivado installation path according to your local installation.
