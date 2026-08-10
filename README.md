@@ -1,6 +1,6 @@
 # FPGA Butterworth IIR Filter
 
-Implementation of a **4th-order Butterworth IIR FDigital Filter Based on Biquad Cascade Structure** on an FPGA using **Verilog HDL**. This project was developed as an undergraduate thesis and demonstrates real-time digital signal filtering using an FPGA. An STM32 microcontroller is used as the input sine wave generator, while the filtered output is transmitted back to a PC for visualization using a Serial Oscilloscope.
+Implementation of a **4th-order Butterworth IIR Digital Filter Based on Biquad Cascade Structure** on an FPGA using **Verilog HDL**. This project was developed as an undergraduate thesis and demonstrates real-time digital signal filtering using an FPGA. An STM32 microcontroller is used as the input sine wave generator, while the filtered output is transmitted back to a PC for visualization using a Serial Oscilloscope.
 
 ---
 
@@ -183,8 +183,10 @@ The STM32 will continuously generate sine wave samples through UART.
 
 Connect
 
-- STM32 TX → FPGA RX
-- STM32 RX ← FPGA TX
+- STM32 UART1 TX (PA9) → FPGA RX (JA2)
+- STM32 UART1 RX (PA10) → FPGA TX (JA1)
+- STM32 UART2 TX (PA2) → Serial Oscilloscope RX
+- STM32 UART2 RX (PA3) → Serial Oscilloscope TX
 - Common GND
 
 ---
